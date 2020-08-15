@@ -2,6 +2,14 @@
     "name": "code-challenge",
     "version": "0.1.0",
     "private": true,
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "lint": "eslint",
+        "format": "prettier --write \"**/*.+(ts|tsx|json|css|md)\" --no-error-on-unmatched-pattern"
+    },
     "dependencies": {
         "@apollo/client": "^3.0.0-rc.6",
         "@testing-library/jest-dom": "^4.2.4",
@@ -17,13 +25,30 @@
         "react-scripts": "3.4.1",
         "typescript": "~3.7.2"
     },
-    "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject",
-        "lint": "eslint",
-        "format": "prettier --write \"**/*.+(ts|tsx|json|css|md)\" --no-error-on-unmatched-pattern"
+    "devDependencies": {
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-prettier": "^3.1.4",
+        "husky": "^4.2.5",
+        "lint-staged": "^10.2.11",
+        "prettier": "^2.0.5"
+    },
+    "jest": {
+        "collectCoverageFrom": [
+            "__tests__/**/*.{js,jsx,ts,tsx}",
+            "!<rootDir>/node_modules/",
+            "!<rootDir>/path/to/dir/"
+        ],
+        "coverageThreshold": {
+            "global": {
+                "branches": 90,
+                "functions": 90,
+                "lines": 90,
+                "statements": 90
+            }
+        },
+        "coverageReporters": [
+            "text"
+        ]
     },
     "browserslist": {
         "production": [
@@ -36,14 +61,6 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
-    },
-    "devDependencies": {
-        "eslint": "^7.7.0",
-        "eslint-config-prettier": "^6.11.0",
-        "eslint-plugin-prettier": "^3.1.4",
-        "husky": "^4.2.5",
-        "lint-staged": "^10.2.11",
-        "prettier": "^2.0.5"
     },
     "husky": {
         "hooks": {
