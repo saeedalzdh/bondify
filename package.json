@@ -1,6 +1,7 @@
 {
   "name": "code-challenge",
   "version": "0.1.0",
+  "homepage": "https://saeedalzdh.github.io/bondify",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
