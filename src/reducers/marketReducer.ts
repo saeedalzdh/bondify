@@ -1,10 +1,13 @@
 import ACTION_TYPES from "../constants/action-types";
-import {FetchMarketFulfilledActionType} from "../constants/types";
+import {
+  FetchMarketFulfilledActionType,
+  ApplySearchQueryActionType,
+} from "../constants/types";
 import {MarketData} from "../constants/interfaces";
 
 export const marketReducer = (
   state: MarketData[] = [],
-  action: FetchMarketFulfilledActionType
+  action: FetchMarketFulfilledActionType | ApplySearchQueryActionType
 ): MarketData[] => {
   switch (action.type) {
     case ACTION_TYPES.MARKET.FETCH_MARKET_FUlLFILLED: {
@@ -37,6 +40,10 @@ export const marketReducer = (
         }));
 
       return marketsData;
+    }
+
+    case ACTION_TYPES.SEARCH.APPLY_SEARCH_QUERY: {
+      return [...state].filter((item) => item.name === action.payload[0]);
     }
 
     default:

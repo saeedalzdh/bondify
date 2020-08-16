@@ -31,3 +31,8 @@ export type FetchSymbolFulfilledActionType = {
   type: typeof ACTION_TYPES.MARKET.FETCH_SYMBOL_FUlLFILLED;
   payload: [];
 };
+
+export type ApplySearchQueryActionType = {
+  type: typeof ACTION_TYPES.SEARCH.APPLY_SEARCH_QUERY;
+  payload: any[];
+};
