@@ -8,11 +8,11 @@ You are going to build the following pages:
 
 1. An overview (main) page with the list/table of 25 coins sorted by the highest market cap
 
--   We want you to make the page with exactly the same column headers
--   This page also contains a search box (search icon can be found in ui-examples folder) that enables users to search based on coin name. Search results will replace the default data
--   We would like the average price of each coin pair to USD
--   You're not required to show the coin icons
--   Search only based on coin name is sufficient
+- We want you to make the page with exactly the same column headers
+- This page also contains a search box (search icon can be found in ui-examples folder) that enables users to search based on coin name. Search results will replace the default data
+- We would like the average price of each coin pair to USD
+- You're not required to show the coin icons
+- Search only based on coin name is sufficient
 
 Example:
 
@@ -20,10 +20,10 @@ Example:
 
 2. A page showing the coin pairs per exhange in the detail card view
 
--   This page should contains cards of coin pairs and the info like the example
--   This page data is based on one of the 25 coins that we are showing in step 1
--   Showing icons is not required
--   If it's not clear, this might help: https://coinmarketcap.com/currencies/bitcoin/markets
+- This page should contains cards of coin pairs and the info like the example
+- This page data is based on one of the 25 coins that we are showing in step 1
+- Showing icons is not required
+- If it's not clear, this might help: https://coinmarketcap.com/currencies/bitcoin/markets
 
 Example:
 
@@ -42,14 +42,14 @@ You can check Blocktap documentation for more help: https://www.blocktap.io/docs
 
 **We will judge your code based on the following criteria:**
 
--   Knowledge of routing and navigation
--   ES6 and React Hooks
--   Typescript Typing
--   Modularity and reusability of your code (think about components)
--   Mobile first responsive implementation of the pages
--   Search
--   Your explanation if you diverted from the assignment, because you had a nicer way of doing things or if something was impossible to achieve
--   _Bonus (optional):_ Theme toggle for dark mode
+- Knowledge of routing and navigation
+- ES6 and React Hooks
+- Typescript Typing
+- Modularity and reusability of your code (think about components)
+- Mobile first responsive implementation of the pages
+- Search
+- Your explanation if you diverted from the assignment, because you had a nicer way of doing things or if something was impossible to achieve
+- _Bonus (optional):_ Theme toggle for dark mode
 
 **Time to spend**
 
