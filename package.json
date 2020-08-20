@@ -1,14 +1,13 @@
 {
   "name": "code-challenge",
   "version": "0.1.0",
-  "homepage": "https://saeedalzdh.github.io/bondify",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint",
+    "lint": "eslint \"**/*.+(ts|tsx)\"",
     "format": "prettier --write \"**/*.+(ts|tsx|json|css|md)\" --no-error-on-unmatched-pattern"
   },
   "dependencies": {

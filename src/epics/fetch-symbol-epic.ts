@@ -7,7 +7,7 @@ import gqlClient from "../services/gql-client";
 import {fetchSymbolFulfilled} from "../actions";
 import {isOfType} from "typesafe-actions";
 
-const getFetchSymbolQuery = () => gql`
+const getFetchSymbolQuery = gql`
   query marketSymbol($marketSymbolId: String) {
     market(id: $marketSymbolId) {
       id
@@ -32,7 +32,7 @@ export const fetchSymbolEpic: Epic<AllActionsTypes, AllActionsTypes, StateType> 
     mergeMap((action) =>
       gqlClient
         .query({
-          query: getFetchSymbolQuery(),
+          query: getFetchSymbolQuery,
           variables: {
             marketSymbolId: action.payload,
           },

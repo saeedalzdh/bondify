@@ -1,5 +1,5 @@
 import ACTION_TYPES from "./action-types";
-import {MarketData, SymbolData} from "./interfaces";
+import {MarketData, SymbolData, AssetDataAPI} from "./interfaces";
 
 export type StateType = {
   markets: MarketData[];
@@ -19,7 +19,7 @@ export type FetchMarketActionType = {
 
 export type FetchMarketFulfilledActionType = {
   type: typeof ACTION_TYPES.MARKET.FETCH_MARKET_FUlLFILLED;
-  payload: [];
+  payload: AssetDataAPI[];
 };
 
 export type FetchSymbolActionType = {
@@ -30,9 +30,4 @@ export type FetchSymbolActionType = {
 export type FetchSymbolFulfilledActionType = {
   type: typeof ACTION_TYPES.MARKET.FETCH_SYMBOL_FUlLFILLED;
   payload: [];
-};
-
-export type ApplySearchQueryActionType = {
-  type: typeof ACTION_TYPES.SEARCH.APPLY_SEARCH_QUERY;
-  payload: any[];
 };

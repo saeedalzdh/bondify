@@ -28,11 +28,11 @@ const useLoadCoinLists = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchMarket());
+    dispatch(fetchMarket(""));
   }, [dispatch]);
 };
 
-const MarketListing = () => {
+const MarketListing: React.FC = () => {
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);

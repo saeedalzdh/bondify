@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import {Theme, createStyles, makeStyles} from "@material-ui/core/styles";
+import {createStyles, makeStyles} from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Divider from "@material-ui/core/Divider";
@@ -11,7 +11,7 @@ import {SymbolData} from "../../constants/interfaces";
 import {StateType} from "../../constants/types";
 import {Grid} from "@material-ui/core";
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
     root: {
       flex: 1,
@@ -33,7 +33,7 @@ const useLoadMarketSymbol = (marketSymbol: string) => {
   }, [dispatch, marketSymbol]);
 };
 
-const MarketDetails = () => {
+const MarketDetails: React.FC = () => {
   const classes = useStyles();
   const {params} = useRouteMatch();
 
@@ -45,7 +45,7 @@ const MarketDetails = () => {
     (state) => state.symbol
   );
 
-  return marketSymbolId && marketSymbolData.marketSymbol ? (
+  return marketSymbolId && marketSymbolData && marketSymbolData.marketSymbol ? (
     <Card className={classes.root}>
       <CardContent className={classes.content}>
         <Grid container spacing={4}>

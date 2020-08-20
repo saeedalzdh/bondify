@@ -11,9 +11,13 @@ const useStyles = makeStyles({
   },
 });
 
-const MarketItem: React.FC<MarketItemProps> = ({columns, row, index}) => {
+const MarketItem: React.FC<MarketItemProps> = ({
+  columns,
+  row,
+  index,
+}: MarketItemProps): React.ReactElement => {
   const classes = useStyles();
-  let history = useHistory();
+  const history = useHistory();
 
   function handleClick(marketSymbolId: string) {
     history.push(`/${encodeURIComponent(marketSymbolId)}`);

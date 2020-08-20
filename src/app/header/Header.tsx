@@ -6,6 +6,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import NightsStay from "@material-ui/icons/NightsStay";
 import SearchBar from "./components/SearchBar";
+import {HeaderProps} from "../../constants/interfaces";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -21,7 +22,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const Header: React.FC<{onDarkModeChange: () => void}> = ({onDarkModeChange}) => {
+const Header: React.FC<HeaderProps> = ({onDarkModeChange}: HeaderProps) => {
   const classes = useStyles();
 
   return (

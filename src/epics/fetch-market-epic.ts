@@ -8,8 +8,12 @@ import {fetchMarketFulfilled} from "../actions";
 import {isOfType} from "typesafe-actions";
 
 const FETCH_MARKET_QUERY = gql`
-  query Markets {
-    assets(sort: {marketCap: DESC}, page: {limit: 30}) {
+  query Markets($coinName: String) {
+    assets(
+      filter: {assetName: {_like: $coinName}}
+      sort: {marketCap: DESC}
+      page: {limit: 30}
+    ) {
       assetName
       marketCap
       markets(
@@ -40,6 +44,13 @@ export const fetchMarketEpic: Epic<AllActionsTypes, AllActionsTypes, StateType> 
 ) =>
   action$.pipe(
     filter(isOfType(ACTION_TYPES.MARKET.FETCH_MARKET)),
-    mergeMap(() => gqlClient.query({query: FETCH_MARKET_QUERY})),
+    mergeMap((action) =>
+      gqlClient.query({
+        query: FETCH_MARKET_QUERY,
+        variables: {
+          coinName: `%${action.payload}%`,
+        },
+      })
+    ),
     map((response) => fetchMarketFulfilled(response.data.assets))
   );

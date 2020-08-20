@@ -1,5 +1,3 @@
-import {string} from "prop-types";
-
 export interface MarketHeader {
   id: "name" | "pair" | "symbol" | "marketCap" | "averageLastPrice";
   label: string;
@@ -34,4 +32,23 @@ export interface MarketItemProps {
   columns: MarketHeader[];
   row: MarketData;
   index: number;
+}
+export interface HeaderProps {
+  onDarkModeChange: () => void;
+}
+
+export interface MarketDataAPI {
+  id: string;
+  marketSymbol: string;
+  baseSymbol: string;
+  ticker: {
+    highPrice: string;
+    lowPrice: string;
+  };
+}
+
+export interface AssetDataAPI {
+  assetName: string;
+  marketCap: number;
+  markets: MarketDataAPI[];
 }

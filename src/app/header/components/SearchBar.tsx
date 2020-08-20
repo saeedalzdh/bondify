@@ -5,7 +5,8 @@ import {MarketData} from "../../../constants/interfaces";
 import {useSelector, useDispatch} from "react-redux";
 import {StateType} from "../../../constants/types";
 import {fade, createStyles, makeStyles, Theme, TextField} from "@material-ui/core";
-import {applySearchQuery, fetchMarket} from "../../../actions";
+import {fetchMarket} from "../../../actions";
+import {useHistory} from "react-router";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -47,20 +48,21 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const SearchBar = () => {
+const SearchBar: React.FC = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
+  const history = useHistory();
   const marketData = useSelector<StateType, MarketData[]>((state) => state.markets);
 
   const handleSearch = (
-    event: React.ChangeEvent<{}>,
+    event: React.ChangeEvent<unknown>,
     newValue: string | null
   ): void => {
+    history.push("/");
     if (newValue) {
-      const queries: any[] = [newValue];
-      dispatch(applySearchQuery(queries));
+      dispatch(fetchMarket(newValue));
     } else {
-      dispatch(fetchMarket());
+      dispatch(fetchMarket(""));
     }
   };
 
